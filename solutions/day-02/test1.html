@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: "Montserrat";
+        font-weight: 300;
+        color: black;
+      }
+
+      .root {
+        min-height: 100%;
+        position: relative;
+      }
+
+      .header-wrapper,
+      .main-wrapper,
+      .footer-wrapper {
+        width: 85%;
+        margin: auto;
+      }
+
+      .header-wrapper,
+      .main-wrapper {
+        padding: 10px;
+        margin: 2px auto;
+      }
+
+      h1 {
+        font-size: 70px;
+        font-weight: 300;
+      }
+
+      h2,
+      h3 {
+        font-weight: 300;
+      }
+
+      header {
+        background-color: aquamarine;
+        padding: 10px;
+      }
+
+      main {
+        padding: 10px;
+        padding-bottom: 60px;
+        /* Height of the footer */
+      }
+
+      ul {
+        margin-left: 15px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+      .project {
+        padding: 10px;
+        background-color: #f8f9fa;
+        align-items: center;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        /* Height of the footer */
+        background: #6cf;
+      }
+
+      .footer-wrapper {
+        font-weight: 400;
+        text-align: center;
+        line-height: 60px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const name = "Ruben davis saji";
+      const age = 21;
+      const ed = "BTech";
+      const summay =
+        "Btech undergraduate of 2025 currently pursuing electronics and communication form model engineerig college thrikkakara";
+      const date = new Date().getFullYear();
+      const skills = [
+        "React",
+        "Node.js",
+        "express.js",
+        "MongoDB",
+        "Python",
+        "C++",
+        "docker",
+        "Aws",
+      ];
+      const sorted_Arr = skills.map((skl) => <li>{skl}</li>);
+      const rootElement = document.querySelector(".root");
+      // JSX element
+      const main = (
+        <main>
+          <div className="main-wrapper">
+            <p>My Skills are:</p>
+            <ul>{sorted_Arr}</ul>
+            <div className="project">
+              <p>My current Projects include: </p>
+              <strong>ChatApp</strong>
+              <strong>Contact Manager</strong>
+              <strong>Blog Application</strong>
+            </div>
+          </div>
+        </main>
+      );
+      // JSX element
+      const footer = (
+        <footer>
+          <div className="footer-wrapper">
+            <p>Footer</p>
+          </div>
+        </footer>
+      );
+      const header = (
+        <header>
+          <div className="header-wrapper">
+            <h1>{name}</h1>
+            <h2>{age}</h2>
+            <h3>{ed}</h3>
+            <p>{summay}</p>
+            <small>{date}</small>
+          </div>
+        </header>
+      );
+      // JSX element
+      const app = (
+        <div>
+          {header}
+          {main}
+          {footer}
+        </div>
+      );
+      // we render the JSX element using the ReactDOM package
+      // ReactDOM has the render method and the render method takes two arguments
+      ReactDOM.render(app, rootElement);
+    </script>
+  </body>
+</html>
